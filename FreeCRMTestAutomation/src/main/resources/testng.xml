@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <suite name="FREE CRM TEST AUTOMATION">
-    <test name="FREE CRM APP TESTCASES">
+   <listeners>
+    <listener class-name="com.crm.qa.ExtentReport.ExtentReporterNG"/>
+  </listeners>
+     <test name="FREE CRM APP TESTCASES">
         <classes>
             <class name="com.crm.qa.testcases.LoginpageTest"> </class>
             
               <class name="com.crm.qa.testcases.HomePageTest"> </class>
-                <class name="com.crm.qa.testcases.ContactsPageTest"> </class>
-            
-            
-            
+                <class name="com.crm.qa.testcases.ContactsPageTest"> </class>     
         </classes>
     </test>
     </suite>

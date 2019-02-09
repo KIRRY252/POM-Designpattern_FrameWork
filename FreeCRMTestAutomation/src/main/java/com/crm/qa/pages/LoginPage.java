@@ -1,6 +1,7 @@
 package com.crm.qa.pages;
 
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
@@ -15,19 +16,24 @@ public class LoginPage extends TestBase {
 	
 	
 @FindBy(name = "username")
+@CacheLookup
 WebElement username;
 	
 @FindBy(name="password")
+@CacheLookup
 WebElement password;
 
 @FindBy(xpath ="//input[@type='submit']")
+@CacheLookup
 WebElement LoginButton;
 	
 
 @FindBy(xpath = "//a[@href='https://www.freecrm.com/register/']")
+@CacheLookup
 WebElement SignupButton;
 
-@FindBy(xpath ="//img[contains(@class,'img-responsive']")
+@FindBy(xpath ="//img[@class = 'img-responsive'][@alt='free crm logo']")
+@CacheLookup
 WebElement CRMlogo_img;
 //Initialising the page objects
 public LoginPage(){

@@ -9,8 +9,10 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.events.EventFiringWebDriver;
 
 import com.crm.qa.util.TestUtil;
+import com.crm.qa.util.WebEventListener;
 
 public class TestBase {
 
@@ -18,6 +20,8 @@ public class TestBase {
 	public static Properties prop;
 	
 	public static FileInputStream ip;
+	public static EventFiringWebDriver E_driver;
+	static WebEventListener Event_Driver;
 
 	
 	public TestBase(){
@@ -59,6 +63,14 @@ public class TestBase {
 			System.setProperty("webdriver.gecko.driver", "C:\\eclipse-SDK-4.2.1-win32-x86_64\\browser drivers\\geckodriver.exe");
 			driver = new FirefoxDriver();	
 		}
+		
+		
+		E_driver=  new EventFiringWebDriver(driver);
+		Event_Driver = new WebEventListener();
+		E_driver.register(Event_Driver);
+		driver= E_driver;
+		
+		
 		
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
