@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [FREE CRM TEST AUTOMATION]">
-  <listeners>
-    <listener class-name="com.crm.qa.ExtentReport.ExtentReporterNG"/>
-  </listeners>
   <test thread-count="5" name="FREE CRM APP TESTCASES(failed)">
     <classes>
+      <class name="com.crm.qa.testcases.HomePageTest">
+        <methods>
+          <include name="VerifyContactsLinkTest"/>
+          <include name="VerifyHomePageTitleTest"/>
+          <include name="TearDown"/>
+          <include name="setup"/>
+          <include name="VerifyUserlabelLink"/>
+        </methods>
+      </class> <!-- com.crm.qa.testcases.HomePageTest -->
       <class name="com.crm.qa.testcases.LoginpageTest">
         <methods>
+          <include name="validatecrmlogoTest"/>
           <include name="TearDown"/>
           <include name="validateLoginTest"/>
           <include name="setup"/>
+          <include name="ValidatepageTitleTest"/>
         </methods>
       </class> <!-- com.crm.qa.testcases.LoginpageTest -->
-      <class name="com.crm.qa.testcases.ContactsPageTest">
-        <methods>
-          <include name="setup"/>
-          <include name="TearDown"/>
-          <include name="ValidateCreatenewcontact"/>
-          <include name="validateContactLinklabelTest"/>
-        </methods>
-      </class> <!-- com.crm.qa.testcases.ContactsPageTest -->
     </classes>
   </test> <!-- FREE CRM APP TESTCASES(failed) -->
 </suite> <!-- Failed suite [FREE CRM TEST AUTOMATION] -->

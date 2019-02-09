@@ -1,6 +1,7 @@
 package com.crm.qa.testcases;
 
 import org.testng.Assert;
+import org.testng.AssertJUnit;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
@@ -12,6 +13,8 @@ import com.crm.qa.pages.HomePage;
 import com.crm.qa.pages.LoginPage;
 import com.crm.qa.util.TestUtil;
 
+
+@Test
 public class ContactsPageTest extends TestBase {
 	
 	HomePage homepage;
@@ -39,15 +42,12 @@ public class ContactsPageTest extends TestBase {
 		 contactspage = homepage.ClickonContactsLinkPage();
 		 
 	}
-	@Test(priority=2)
-	
 	public void validateContactLinklabelTest() {
 		testutil.SwitchToFrames();
 		Assert.assertTrue(contactspage.verifycontatsLabelLink(),"Contacts link is missing");
 		
 	}
 	
-	@Test(priority=1)
 	public void validateusercheckboxTest() {
 		contactspage.SelectUserCheckBox("raj ganesh");
 		
@@ -64,7 +64,6 @@ public class ContactsPageTest extends TestBase {
 	}
 	
 	
-	@Test(priority= 4,dataProvider = "getTestDataCRM")
 	public void ValidateCreatenewcontact(String title,String Fname,String SurName,String Comp) {
 		homepage.HoveroncontactsLink();
 		//contactspage.Createnewcontact("Mr.", "sand", "GUN", "Micro");
